@@ -1,0 +1,23 @@
+.layout{
+  display: grid;
+  grid-template-columns: 3fr 20fr 20fr 3fr;
+  grid-template-rows: 15fr 5fr 15fr 10fr;
+}
+
+.nav-bar{
+  display: grid;
+  grid-row: 2;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.content-box{
+
+}
+
+app-transaction{
+  display: grid;
+  grid-row: 3;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
