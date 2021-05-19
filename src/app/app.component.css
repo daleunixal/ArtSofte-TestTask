@@ -1,23 +1,39 @@
 .layout{
   display: grid;
-  grid-template-columns: 3fr 20fr 20fr 3fr;
-  grid-template-rows: 15fr 5fr 15fr 10fr;
+  grid-template-columns: 2fr 17fr 25fr 2fr;
+  grid-template-rows: 7fr 5fr 20fr 7fr;
+  height: 97vh;
+  background-color: #f6f6f6;
 }
 
 .nav-bar{
   display: grid;
   grid-row: 2;
-  grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 4;
 }
 
 .content-box{
-
-}
-
-app-transaction{
   display: grid;
   grid-row: 3;
   grid-column-start: 2;
   grid-column-end: 4;
+}
+
+app-transaction{
+  grid-row: 3;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+app-history{
+  grid-row: 3;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+app-shared{
+  grid-row: 2;
+  grid-column-start: 1;
+  grid-column-end: 5;
 }

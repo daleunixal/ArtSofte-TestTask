@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-shared',
   templateUrl: './shared.component.html',
-  styleUrls: ['./shared.component.css']
+  styleUrls: ['./shared.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SharedComponent implements OnInit {
 
@@ -12,4 +13,7 @@ export class SharedComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  HistoryClicked() {
+
+  }
 }

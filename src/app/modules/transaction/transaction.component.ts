@@ -8,9 +8,14 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 })
 export class TransactionComponent implements OnInit {
 
+  cashForm;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSubmit() {
+
+  }
 }

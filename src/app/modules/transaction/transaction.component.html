@@ -1,3 +1,14 @@
-<div class="content-box">
-  Transactions
+<div class="transaction-wrapper">
+  <div class="card-wrapper">
+    <div class="card"> govno</div>
+  </div>
+  <div class="cash">
+    <form [formGroup]="cashForm" (ngSubmit)="onSubmit()">
+      <input formControlName="value" placeholder="Введите сумму">
+      <hr>
+    </form>
+  </div>
+  <div class="recipient-wrapper">
+    <div class="card"> mojno</div>
+  </div>
 </div>
