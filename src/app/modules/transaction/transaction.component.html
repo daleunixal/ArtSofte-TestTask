@@ -1,14 +1,28 @@
 <div class="transaction-wrapper">
   <div class="card-wrapper">
-    <div class="card"> govno</div>
+      <form class="card" [formGroup]="this.senderForm">
+        <label class="card-row">Карта отправителя
+          <input class="payer__input" formControlName="cardNumber" placeholder="0000 0000 0000 0000">
+        </label>
+        <label class="name-row">Имя отправителя
+          <input class="name__input" formControlName="senderName" placeholder="ARTEM LEBEDEV">
+        </label>
+      </form>
   </div>
   <div class="cash">
     <p class="attention_text">Сумма:</p>
-    <form [formGroup]="cashForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="this.cashForm">
       <input class="cash__input" formControlName="value" placeholder="Введите сумму">
     </form>
   </div>
   <div class="recipient-wrapper">
-    <div class="card"> mojno</div>
+      <form class="card" [formGroup]="this.recipientForm">
+        <label class="card-row">Карта получателя
+          <input class="payer__input" formControlName="cardNumber" placeholder="0000 0000 0000 0000">
+        </label>
+      </form>
+  </div>
+  <div class="submitButton">
+    <button (click)="onSubmit()">Push Me</button>
   </div>
 </div>

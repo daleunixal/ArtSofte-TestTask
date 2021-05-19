@@ -25,10 +25,14 @@
   display: grid;
   height: 14em;
   width: 21em;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 5fr 4fr;
 
-  background-color: #F7DCD5;
+  background-color: #f6f6f6;
+  border: 2px solid #EEB6BC;
   border-radius: 1em;
 }
+
 
 .cash{
   display: flex;
@@ -41,11 +45,42 @@
 
 .cash__input,
 .card__input,
-.payer__input{
+.payer__input,
+.name__input{
   background-color: #f6f6f6;
   border: 0;
   border-bottom: 1px solid #cbcbcb;
   outline: none;
+}
+
+.card-row{
+  font-family: 'Comfortaa', cursive;
+  font-size: 15px;
+  color: #EEB6BC;
+  display: flex;
+  flex-direction: column;
+  margin: 6px;
+  grid-row: 1;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.name-row{
+  font-family: 'Comfortaa', cursive;
+  font-size: 15px;
+  color: #EEB6BC;
+  display: flex;
+  flex-direction: column;
+  margin: 6px;
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.submitButton{
+  grid-row: 1;
+  grid-column: 3;
+  display: flex;
+  align-content: center;
 }
 
 .attention_text{

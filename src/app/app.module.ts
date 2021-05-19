@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import {RouterModule} from '@angular/router';
 import {TransactionModule} from './modules/transaction/transaction.module';
 import {SharedModule} from './modules/shared/shared.module';
-import {SharedComponent} from './modules/shared/shared.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({

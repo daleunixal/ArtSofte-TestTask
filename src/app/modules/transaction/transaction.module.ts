@@ -14,9 +14,9 @@ const routes: Routes = [
     TransactionComponent
   ],
     imports: [
-        CommonModule,
-        RouterModule.forChild(routes),
-        ReactiveFormsModule
+      CommonModule,
+      RouterModule.forChild(routes),
+      ReactiveFormsModule
     ]
 })
 export class TransactionModule { }

@@ -1,3 +1,11 @@
-<div>
-  History
-</div>
+
+<ag-grid-angular
+  style="background-color: #cbcbcb"
+  class="ag-theme-material history-wrapper"
+  [rowData]="historyStash"
+  [columnDefs]="columnDef"
+  (gridReady)="onGridReady($event)"
+  [frameworkComponents]="frameworkComponents"
+>
+
+</ag-grid-angular>
