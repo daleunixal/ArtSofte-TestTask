@@ -3,9 +3,9 @@
     <div class="card"> govno</div>
   </div>
   <div class="cash">
+    <p class="attention_text">Сумма:</p>
     <form [formGroup]="cashForm" (ngSubmit)="onSubmit()">
-      <input formControlName="value" placeholder="Введите сумму">
-      <hr>
+      <input class="cash__input" formControlName="value" placeholder="Введите сумму">
     </form>
   </div>
   <div class="recipient-wrapper">
