@@ -1,47 +1,47 @@
 <div class="transaction-wrapper">
-  <div class="card-wrapper">
-      <form class="card" [formGroup]="this.senderForm">
-        <label class="card-row">Карта отправителя
-          <input class="payer__input" formControlName="cardNumber" placeholder="0000 0000 0000 0000">
-        </label>
-        <label class="name-row">Имя отправителя
-          <input class="name__input" formControlName="senderName" placeholder="ARTEM LEBEDEV">
-        </label>
-        <div class="selector-grid">
-          <label class="attention_text" style="font-size: 14px"> Истекает:
-          <div class="selector-row">
-            <select formControlName="monthSelect">
-              <option value="" disabled hidden selected>MM</option>
-              <option *ngFor="let month of monthArray" [ngValue]="month">
-                {{month}}
-              </option>
-            </select>
-            <p>/</p>
-            <select formControlName="yearSelect">
-              <option value="" disabled hidden selected>YY</option>
-              <option *ngFor="let year of getDecadeArray()" [ngValue]="'20'+year">
-                {{year}}
-              </option>
-            </select>
-          </div>
-          </label>
-        </div>
-      </form>
-  </div>
-  <div class="cash">
-    <p class="attention_text">Сумма:</p>
-    <form [formGroup]="this.cashForm">
-      <input class="cash__input" formControlName="value" placeholder="Введите сумму">
-    </form>
-  </div>
-  <div class="recipient-wrapper">
-      <form class="card" [formGroup]="this.recipientForm">
-        <label class="card-row">Карта получателя
-          <input class="payer__input" formControlName="cardNumber" placeholder="0000 0000 0000 0000">
-        </label>
-      </form>
-  </div>
-  <div class="submitButton">
-    <button (click)="onSubmit()">Провести транзакцию</button>
-  </div>
+    <div class="card-wrapper">
+        <form [formGroup]="this.senderForm" class="card">
+            <label class="card-row">Карта отправителя
+                <input class="payer__input" formControlName="cardNumber" placeholder="0000 0000 0000 0000">
+            </label>
+            <label class="name-row">Имя отправителя
+                <input class="name__input" formControlName="senderName" placeholder="ARTEM LEBEDEV">
+            </label>
+            <div class="selector-grid">
+                <label class="attention_text" style="font-size: 14px"> Истекает:
+                    <div class="selector-row">
+                        <select formControlName="monthSelect">
+                            <option disabled hidden selected value="">MM</option>
+                            <option *ngFor="let month of monthArray" [ngValue]="month">
+                                {{month}}
+                            </option>
+                        </select>
+                        <p>/</p>
+                        <select formControlName="yearSelect">
+                            <option disabled hidden selected value="">YY</option>
+                            <option *ngFor="let year of getDecadeArray()" [ngValue]="'20'+year">
+                                {{year}}
+                            </option>
+                        </select>
+                    </div>
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="cash">
+        <p class="attention_text">Сумма:</p>
+        <form [formGroup]="this.cashForm">
+            <input class="cash__input" formControlName="value" placeholder="Введите сумму">
+        </form>
+    </div>
+    <div class="recipient-wrapper">
+        <form [formGroup]="this.recipientForm" class="card">
+            <label class="card-row">Карта получателя
+                <input class="payer__input" formControlName="cardNumber" placeholder="0000 0000 0000 0000">
+            </label>
+        </form>
+    </div>
+    <div class="submitButton">
+        <button (click)="onSubmit()">Провести транзакцию</button>
+    </div>
 </div>

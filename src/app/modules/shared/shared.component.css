@@ -1,35 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
-.menu{
-  display: inline-flex;
-  justify-items: center;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  width: auto;
-  background-color: #F5E4E8;
-  border-radius: 3em 18em;
+.menu {
+    display: inline-flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    background-color: #F5E4E8;
+    border-radius: 3em 18em;
 }
 
-.menu-item{
-  display: flex;
-  height:50%;
-  font-family: 'Comfortaa', cursive;;
-  font-size: 1em;
-  background-color: unset;
-  text-align: justify;
-  align-items: center;
-  margin: 15px
+.menu-item {
+    display: flex;
+    height: 50%;
+    font-family: 'Comfortaa', cursive;;
+    font-size: 1em;
+    background-color: unset;
+    text-align: justify;
+    align-items: center;
+    margin: 15px
 }
 
-.menu-item:hover{
-  background-color: #EEB6BC;
+.menu-item:hover {
+    background-color: #EEB6BC;
 
-  border-top-left-radius: 1em;
-  border-bottom-right-radius: 1em;
+    border-top-left-radius: 1em;
+    border-bottom-right-radius: 1em;
 }
 
 @font-face {
-  font-family: 'Comfortaa';
-  src: url("https://fonts.googleapis.com/css?family=Comfortaa") format('opentype');
+    font-family: 'Comfortaa';
+    src: url("https://fonts.googleapis.com/css?family=Comfortaa") format('opentype');
 }

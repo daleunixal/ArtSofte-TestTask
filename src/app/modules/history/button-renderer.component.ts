@@ -1,38 +1,31 @@
-import { Component } from '@angular/core';
-import { ICellRendererAngularComp } from 'ag-grid-angular';
+import {Component} from '@angular/core';
+import {ICellRendererAngularComp} from 'ag-grid-angular';
 
 
 @Component({
-  selector: 'app-button-renderer',
-  template: `
-    <button type="button" (click)="onClick($event)">{{label}}</button>
-  `
+    selector: 'app-button-renderer',
+    template: `
+        <button type="button" (click)="onClick($event)">{{_label}}</button>
+    `
 })
 
 export class ButtonRendererComponent implements ICellRendererAngularComp {
 
-  params;
-  label: string;
+    public _label: string;
+    private _params;
 
-  agInit(params): void {
-    this.params = params;
-    this.label = this.params.label || null;
-  }
-
-  refresh(params?: any): boolean {
-    return true;
-  }
-
-  onClick($event) {
-    if (this.params.onClick instanceof Function) {
-      // put anything into params u want pass into parents component
-      const params = {
-        event: $event,
-        rowData: this.params.node.data
-        // ...something
-      }
-      this.params.onClick(this.params.node.data.hash);
-
+    agInit(params): void {
+        this._params = params;
+        this._label = this._params.label || null;
     }
-  }
+
+    refresh(params?: any): boolean {
+        return true;
+    }
+
+    onClick($event): void {
+        if (this._params.onClick instanceof Function) {
+            this._params.onClick(this._params.node.data.hash);
+        }
+    }
 }
