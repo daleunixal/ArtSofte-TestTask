@@ -7,6 +7,25 @@
         <label class="name-row">Имя отправителя
           <input class="name__input" formControlName="senderName" placeholder="ARTEM LEBEDEV">
         </label>
+        <div class="selector-grid">
+          <label class="attention_text" style="font-size: 14px"> Истекает:
+          <div class="selector-row">
+            <select formControlName="monthSelect">
+              <option value="" disabled hidden selected>MM</option>
+              <option *ngFor="let month of monthArray" [ngValue]="month">
+                {{month}}
+              </option>
+            </select>
+            <p>/</p>
+            <select formControlName="yearSelect">
+              <option value="" disabled hidden selected>YY</option>
+              <option *ngFor="let year of getDecadeArray()" [ngValue]="'20'+year">
+                {{year}}
+              </option>
+            </select>
+          </div>
+          </label>
+        </div>
       </form>
   </div>
   <div class="cash">
@@ -23,6 +42,6 @@
       </form>
   </div>
   <div class="submitButton">
-    <button (click)="onSubmit()">Push Me</button>
+    <button (click)="onSubmit()">Провести транзакцию</button>
   </div>
 </div>

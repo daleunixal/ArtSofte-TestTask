@@ -76,15 +76,31 @@
   grid-column: 1;
 }
 
+
+
+.selector-grid{
+  display: flex;
+  flex-direction: column;
+  grid-row: 3;
+  grid-column: 2;
+}
+
+.selector-row{
+  display: flex;
+  height: 25px;
+  align-items: center;
+}
+
 .submitButton{
   grid-row: 1;
   grid-column: 3;
   display: flex;
   align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .attention_text{
   font-family: 'Comfortaa', cursive;
   color: #EEB6BC;
-
 }

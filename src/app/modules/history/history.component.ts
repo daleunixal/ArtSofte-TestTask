@@ -15,15 +15,19 @@ export class HistoryComponent implements OnInit {
   historyStash: Array<IHistory>
 
   columnDef = [
-    {field: 'senderCard', headerName: 'С карты', flex: "1"},
-    {field: 'recipientCard', headerName: 'На карту', flex: "2"},
-    {field: 'recipientCard', headerName: 'Сумма', flex: "3"},
-    {field: 'date', headerName: 'Дата', flex: "4"},
-    {field: 'senderName', headerName: 'Имя держателя', flex: "5"},
+    {field: 'senderCard', headerName: 'С карты'},
+    {field: 'recipientCard', headerName: 'На карту'},
+    {field: 'recipientCard', headerName: 'Сумма'},
+    {field: 'date', headerName: 'Дата'},
+    {field: 'senderName', headerName: 'Имя держателя'},
     {field: 'hash', hide: true},
     {headerName: 'Удалить?',cellRenderer: 'buttonRenderer', cellRendererParams:{
-        onClick: this.onRowPublishBtnClick.bind(this),
+        onClick: this.onDeleteBtnClick.bind(this),
         label: 'Delete',
+      }},
+    {headerName: 'Повторить?',cellRenderer: 'buttonRenderer', cellRendererParams:{
+        onClick: this.onRepeatBtnClick.bind(this),
+        label: 'Повторить',
       }}
   ]
   frameworkComponents;
@@ -38,8 +42,14 @@ export class HistoryComponent implements OnInit {
     this.historyStash = this._historyProvider.getTransactions();
   }
 
-  onRowPublishBtnClick(e) {
-    console.log(e.rowData);
+  onRepeatBtnClick(e) {
+    console.log(e);
+    this._historyProvider.repeatTransaction(e);
+  }
+
+  onDeleteBtnClick(e){
+    this._historyProvider.removeTransaction(e);
+    this.historyStash = this._historyProvider.getTransactions();
   }
 
   public onGridReady(params){

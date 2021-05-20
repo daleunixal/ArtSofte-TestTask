@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {IHistory} from '../models/history';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class HistoryProviderService {
 
   private _history: Array<IHistory> = [];
 
-  constructor() {
+  constructor(private _router: Router) {
 
   }
 
@@ -34,9 +35,17 @@ export class HistoryProviderService {
     return this._history;
   }
 
-  public removeTransaction(index: number){
-    localStorage.removeItem(index.toString())
+  public getTransaction(hash: number): IHistory{
+    return JSON.parse(localStorage.getItem(hash.toString()))
+  }
+
+  public repeatTransaction(hash: number){
+    this._router.navigate(['/'], {queryParams: {hash: hash}})
+  }
+
+  public removeTransaction(hash: number){
+    debugger;
+    localStorage.removeItem(hash.toString())
     this._history = [];
-    this.parseStorage();
   }
 }

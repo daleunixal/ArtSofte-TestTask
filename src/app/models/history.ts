@@ -23,13 +23,13 @@ export class History implements IHistory{
 
   constructor(params: IHistory) {
     this.date = new Date();
-    this.hash = this.getHash();
     this.expireMonth = params.expireMonth;
     this.expireYear = params.expireYear;
     this.value = params.recipientCard;
     this.recipientCard = params.recipientCard;
     this.senderCard = params.senderCard;
     this.senderName = params.senderName;
+    this.hash = this.getHash();
   }
 
   private getHash(){
